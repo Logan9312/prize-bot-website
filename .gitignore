@@ -5,7 +5,7 @@
 # gitignore template for the SvelteKit, frontend web component framework
 # website: https://kit.svelte.dev/
 
-.svelte-kit/
+.svelte-kit/        
 package
 
 # End of https://www.toptal.com/developers/gitignore/api/svelte
