@@ -8,10 +8,14 @@
 	};
 </script>
 
-<div class="flex min-h-screen flex-col">
+<svelte:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
+
+<div class="flex min-h-screen flex-col bg-white">
 	<Navbar />
-	<div class="flex-grow">
+	<main class="flex-grow">
 		<slot />
-	</div>
+	</main>
 	<Footer />
 </div>
