@@ -1,5 +1,7 @@
 <script>
 	import logo from '$lib/assets/logo.png';
+	import { signIn, signOut } from '@auth/sveltekit/client';
+	import { page } from '$app/stores';
 </script>
 
 <header class="absolute inset-x-0 top-0 z-50">
@@ -38,10 +40,11 @@
 			<a href="/Docs" class="text-sm font-semibold leading-6 text-gray-900">Docs</a>
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-				>Log in <span aria-hidden="true">&rarr;</span></a
+			<button
+				on:click={() => signIn('discord')}
+				class="text-sm font-semibold leading-6 text-gray-900"
+				>Log in <span aria-hidden="true">&rarr;</span></button
 			>
 		</div>
 	</nav>
-
 </header>

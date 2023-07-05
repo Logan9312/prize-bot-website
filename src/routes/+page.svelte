@@ -18,7 +18,7 @@
 		<div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
 			<div class="text-center">
 				<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-					Reward Your Community With Ease
+					Community Rewards Made Easy
 				</h1>
 				<p class="mt-6 text-lg leading-8 text-gray-600">
 					Prize Bot helps you manage your prizes so that you can focus on running quality events for
