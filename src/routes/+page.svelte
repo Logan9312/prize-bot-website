@@ -1,6 +1,7 @@
 <script>
 	import { signIn, signOut } from '@auth/sveltekit/client';
 	import { page } from '$app/stores';
+	import Discord from '$lib/assets/discord_logo.svg';
 </script>
 
 <div class="bg-white">
@@ -15,32 +16,23 @@
 			/>
 		</div>
 		<div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-			<div class="hidden sm:mb-8 sm:flex sm:justify-center">
-				<div
-					class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-				>
-					Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"
-						><span class="absolute inset-0" aria-hidden="true" />Read more
-						<span aria-hidden="true">&rarr;</span></a
-					>
-				</div>
-			</div>
 			<div class="text-center">
 				<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-					Manage Discord Prizes And Events With Ease
+					Reward Your Community With Ease
 				</h1>
 				<p class="mt-6 text-lg leading-8 text-gray-600">
-					Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-					Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+					Prize Bot helps you manage your prizes so that you can focus on running quality events for
+					your members and save time tracking the winners.
 				</p>
 				<div class="mt-10 flex items-center justify-center gap-x-6">
 					<a
-						href="#"
-						class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-						>Get started</a
+						href="https://discord.com/api/oauth2/authorize?client_id=995022149226082324&permissions=8&scope=bot"
+						class="flex rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+						><img src={Discord} alt="Discord Logo" height="20" width="20" class="mr-2" />Invite To
+						Discord</a
 					>
-					<a href="#" class="text-sm font-semibold leading-6 text-gray-900"
-						>Learn more <span aria-hidden="true">→</span></a
+					<a href="/About" class="text-sm font-semibold leading-6 text-gray-900">
+						Learn more <span aria-hidden="true">→</span></a
 					>
 				</div>
 			</div>
@@ -56,18 +48,3 @@
 		</div>
 	</div>
 </div>
-<p>
-	{#if $page.data.session}
-		{#if $page.data.session.user?.image}
-			<span style="background-image: url('{$page.data.session.user.image}')" class="avatar" />
-		{/if}
-		<span class="signedInText">
-			<small>Signed in as</small><br />
-			<strong>{$page.data.session.user?.name ?? 'User'}</strong>
-		</span>
-		<button on:click={() => signOut()} class="button">Sign out</button>
-	{:else}
-		<span class="notSignedInText">You are not signed in</span>
-		<button on:click={() => signIn('discord')}>Sign In with Discord</button>
-	{/if}
-</p>
