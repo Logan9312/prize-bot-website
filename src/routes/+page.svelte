@@ -25,7 +25,7 @@
 					Prize Bot helps you manage your prizes so that you can focus on running quality events for
 					your members and save time tracking the winners.
 				</p>
-				<div class="mt-10 flex items-center gap-x-6">
+				<div class="mt-10 flex items-center gap-x-6 align-bottom ">
 					<a
 						href="https://discord.com/api/oauth2/authorize?client_id=995022149226082324&permissions=8&scope=bot"
 						class="flex rounded-md bg-fuchsia-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-fuchsia-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -37,8 +37,8 @@
 					>
 				</div>
 			</div>
-			<div class="mx-10">
-				<img src={Example} alt="Prize Bot Example" class="rounded-xl" />
+			<div class="mx-10 max-h-[300px]">
+				<img src={Example} alt="Prize Bot Example" class="rounded-xl object-contain h-full" />
 			</div>
 		</div>
 		<div
