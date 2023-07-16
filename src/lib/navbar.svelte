@@ -37,6 +37,7 @@
 		<div class="hidden lg:flex lg:gap-x-12">
 			<a href="/About" class="text-sm font-semibold leading-6 text-gray-900">About</a>
 			<a href="/Features" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+			<a href="/Pricing" class="text-sm font-semibold leading-6 text-gray-900">Pricing</a>
 			<a href="/Docs" class="text-sm font-semibold leading-6 text-gray-900">Docs</a>
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
