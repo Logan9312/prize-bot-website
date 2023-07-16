@@ -41,11 +41,17 @@
 			<a href="/Docs" class="text-sm font-semibold leading-6 text-gray-900">Docs</a>
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
-			<button
-				on:click={() => signIn('discord')}
-				class="text-sm font-semibold leading-6 text-gray-900"
-				>Log in <span aria-hidden="true">&rarr;</span></button
-			>
+			{#if $page.data.session}
+				<button
+					on:click={() => signIn('discord')}
+					class="text-sm font-semibold leading-6 text-gray-900"
+					>Log in <span aria-hidden="true">&rarr;</span></button
+				>
+			{:else}
+				<button on:click={() => signOut()} class="text-sm font-semibold leading-6 text-gray-900"
+					>Log out <span aria-hidden="true">&rarr;</span></button
+				>
+			{/if}
 		</div>
 	</nav>
 </header>
