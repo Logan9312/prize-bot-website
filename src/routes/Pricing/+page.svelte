@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { signIn } from '@auth/sveltekit/client';
-/* 	const stripe = require('stripe')('YOUR_SECRET_KEY');
+	/* 	const stripe = require('stripe')('YOUR_SECRET_KEY');
 	try {
 		// Add your logic to fetch the payment amount and other necessary data from the request
 		const { paymentAmount, currency } = req.body;
