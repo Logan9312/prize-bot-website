@@ -1,6 +1,35 @@
 <script>
 	import { page } from '$app/stores';
 	import { signIn } from '@auth/sveltekit/client';
+/* 	const stripe = require('stripe')('YOUR_SECRET_KEY');
+	try {
+		// Add your logic to fetch the payment amount and other necessary data from the request
+		const { paymentAmount, currency } = req.body;
+		//TODO FIX THIS UP
+		// Create a new Checkout Session using the Stripe API
+		const session = await stripe.checkout.sessions.create({
+			payment_method_types: ['card'],
+			line_items: [
+				{
+					price_data: {
+						currency: currency,
+						unit_amount: paymentAmount,
+						product_data: {
+							name: 'Your Product Name' // Replace with your actual product name
+						}
+					},
+					quantity: 1 // Change if you allow multiple quantities for your product
+				}
+			],
+			mode: 'payment',
+			success_url: 'https://your-website.com/success', // Replace with your actual success URL
+			cancel_url: 'https://your-website.com/cancel' // Replace with your actual cancel URL
+		});
+
+		// Send the session ID back to the client-side JavaScript code
+	} catch (error) {
+		console.error('Error creating checkout session:', error.message);
+	} */
 </script>
 
 <div class="bg-white py-24 sm:py-32">
@@ -111,7 +140,7 @@
 							{:else}
 								Sign in to Subscribe
 							{/if}
-                    </button>
+						</button>
 						<p class="mt-6 text-xs leading-5 text-gray-600">You are free to cancel at any time</p>
 					</div>
 				</div>
