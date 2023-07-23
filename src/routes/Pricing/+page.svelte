@@ -106,7 +106,7 @@
 							<span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
 						</p>
 						<button
-							on:click={$page.data.session ? sessionURL : () => signIn('discord')}
+							on:click={$page.data.session ? () => window.location.href = sessionURL : () => signIn('discord')}
 							class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 						>
 							{#if $page.data.session}
