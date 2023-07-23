@@ -1,35 +1,9 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import { signIn } from '@auth/sveltekit/client';
-	/* 	const stripe = require('stripe')('YOUR_SECRET_KEY');
-	try {
-		// Add your logic to fetch the payment amount and other necessary data from the request
-		const { paymentAmount, currency } = req.body;
-		//TODO FIX THIS UP
-		// Create a new Checkout Session using the Stripe API
-		const session = await stripe.checkout.sessions.create({
-			payment_method_types: ['card'],
-			line_items: [
-				{
-					price_data: {
-						currency: currency,
-						unit_amount: paymentAmount,
-						product_data: {
-							name: 'Your Product Name' // Replace with your actual product name
-						}
-					},
-					quantity: 1 // Change if you allow multiple quantities for your product
-				}
-			],
-			mode: 'payment',
-			success_url: 'https://your-website.com/success', // Replace with your actual success URL
-			cancel_url: 'https://your-website.com/cancel' // Replace with your actual cancel URL
-		});
 
-		// Send the session ID back to the client-side JavaScript code
-	} catch (error) {
-		console.error('Error creating checkout session:', error.message);
-	} */
+	// Parse the 'body' to get the actual object
+	const sessionURL = $page.data.checkout_url;
 </script>
 
 <div class="bg-white py-24 sm:py-32">
@@ -46,6 +20,9 @@
 		>
 			<div class="p-8 sm:p-10 lg:flex-auto">
 				<h3 class="text-2xl font-bold tracking-tight text-gray-900">Monthly Subscription</h3>
+				<p>
+					{$page.data.session ? JSON.stringify($page) : 'Nothing'}
+				</p>
 				<p class="mt-6 text-base leading-7 text-gray-600">
 					Each premium subscription is only valid for one discord server. After purchase, run the <strong
 						>/premium activate</strong
@@ -132,7 +109,7 @@
 							<span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
 						</p>
 						<button
-							on:click={$page.data.session ? undefined : () => signIn('discord')}
+							on:click={$page.data.session ? sessionURL : () => signIn('discord')}
 							class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 						>
 							{#if $page.data.session}
