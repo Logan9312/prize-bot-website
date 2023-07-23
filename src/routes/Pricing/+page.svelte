@@ -20,9 +20,6 @@
 		>
 			<div class="p-8 sm:p-10 lg:flex-auto">
 				<h3 class="text-2xl font-bold tracking-tight text-gray-900">Monthly Subscription</h3>
-				<p>
-					{$page.data.session ? JSON.stringify($page) : 'Nothing'}
-				</p>
 				<p class="mt-6 text-base leading-7 text-gray-600">
 					Each premium subscription is only valid for one discord server. After purchase, run the <strong
 						>/premium activate</strong
