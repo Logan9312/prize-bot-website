@@ -42,8 +42,13 @@
 		</div>
 		<div class="hidden lg:flex lg:flex-1 lg:justify-end">
 			{#if $page.data.session}
-				<button on:click={() => signOut()} class="text-sm font-semibold leading-6 text-gray-900"
-					>Log out <span aria-hidden="true">&rarr;</span></button
+				<button on:click={() => signOut()} class="text-sm font-semibold leading-6 text-gray-900 flex flex-row items-center">
+					<img
+						src={$page.data.session.user?.image}
+						alt="profile icon"
+						class="mx-3 h-8 rounded-xl"
+					/>
+					Log out <span aria-hidden="true">&rarr;</span></button
 				>
 			{:else}
 				<button
