@@ -106,8 +106,8 @@
 							<span class="text-5xl font-bold tracking-tight text-gray-900">$5</span>
 							<span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
 						</p>
+						<!-- TODO make dedicated customer portal buttons instead of doing this -->
 						<button
-						{/*TODO make dedicated customer portal buttons instead of doing this*/}
 							on:click={$page.data.billing_portal_url
 								? () => (window.location.href = billingURL)
 								: $page.data.session
